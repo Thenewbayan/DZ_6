@@ -11,19 +11,21 @@ double CoefX2=Convert.ToInt32(Console.ReadLine()); //coof K2
 double CoefB2=Convert.ToInt32(Console.ReadLine());// coof B2
 //решаем через равенство (в пересечении у и х для обоих уравнений равны, значит по у их можно приравнять)
 //K*x+b=K2*x+b2=> K*x-K2*x=b2-b=>x=(b2-b)/(K-K2)
+double coordX=0;
+double coordY=0;
 if ((CoefX1==CoefX2)&&(CoefB1==CoefB2))
 {
     Console.WriteLine("Наши прямые совпадают и имеют бесконечное число общих точек");
 }
 if ((CoefX1-CoefX2)!=0)
 {
-double coordX=(CoefB2-CoefB1)/(CoefX1-CoefX2);
-double coordY=(CoefX1*coordX)+CoefB1;
+coordX=(CoefB2-CoefB1)/(CoefX1-CoefX2);
+coordY=(CoefX1*coordX)+CoefB1;
 }
 else 
 {
     Console.WriteLine("прямые не преесекаются");
 }
-//Console.WriteLine($"наши прямые пересекаются в точке  {Math.Round(coordX, 1)},{Math.Round(coordY, 1)}");
-Console.WriteLine(coordX);
-Console.WriteLine(coordY);
+Console.WriteLine($"наши прямые пересекаются в точке  {Math.Round(coordX, 2)};{Math.Round(coordY, 2)}");
+// Console.WriteLine(coordX);
+// Console.WriteLine(coordY);
